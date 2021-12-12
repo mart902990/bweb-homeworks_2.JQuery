@@ -1,8 +1,7 @@
 <?php
-//session_start();
-echo 'вроде все и работает но то через ....';
-$username = $_REQUEST['"user_name"'] ;
-echo "$username";
+
+echo 'вроде все и работает но ниче не понятно....';
+
 /**
  * Используйте эти классы, если не умеете или не хотите работать с `composer`
  * и использовать библиотеку [dadata-php](https://github.com/hflabs/dadata-php/).
