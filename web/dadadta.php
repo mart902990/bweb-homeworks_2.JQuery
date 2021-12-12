@@ -1,5 +1,8 @@
 <?php
+session_start();
 echo 'вроде все и работает но то через ....';
+$username = $_REQUEST['"user_name"'] ;
+echo "$username";
 /**
  * Используйте эти классы, если не умеете или не хотите работать с `composer`
  * и использовать библиотеку [dadata-php](https://github.com/hflabs/dadata-php/).
@@ -13,8 +16,8 @@ class TooManyRequests extends Exception
 
 class Dadata
 {
-    //private $clean_url = "https://cleaner.dadata.ru/api/v1/clean";
-    private $clean_url = "https://dadata.ru/api/clean/name";
+    private $clean_url = "https://cleaner.dadata.ru/api/v1/clean";
+    
     private $suggest_url = "https://suggestions.dadata.ru/suggestions/api/4_1/rs";
     private $token;
     private $secret;
