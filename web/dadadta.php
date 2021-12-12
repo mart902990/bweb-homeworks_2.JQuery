@@ -171,5 +171,5 @@ $result = $dadata->clean("name", $_POST['user_name']." ".$_POST['user_second_nam
 echo '<pre>';
 print_r($result);
 echo '</pre>';
-
+echo 'вроде все и работает но то через ....';
 $dadata->close();
