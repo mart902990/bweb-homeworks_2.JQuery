@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
 </head>
 <body>
-  <!-- Тип кодирования данных, enctype, ДОЛЖЕН БЫТЬ указан ИМЕННО так -->
-<form enctype="multipart/form-data" action="upload.php" method="POST">
-    <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
-      <input type="hidden" name="MAX_FILE_SIZE" value="30000000" /> 
-    <!-- Название элемента input определяет имя в массиве $_FILES -->
-    Отправить этот файл: <input name="content" type="file" />  
-   с каким именем сохранить файл на сервере: <input name="file_name" type="text" /> 
-    <input type="submit" value="Отправить файл" />
-    
-</form>  
+	<form action="dadata.php" method="POST">
+
+		<strong>Ваше имя<span class="mf-req">*</span></strong><br>
+		<input type="text" name="user_name" value=""><br>
+
+		<strong>Ваше отчество<span class="mf-req">*</span></strong><br>
+		<input type="text" name="user_second_name" value=""><br>
+
+		<strong>Ваша фамилия<span class="mf-req">*</span></strong><br>
+		<input type="text" name="user_last_name" value=""><br>
+
+		<input type="submit" name="submit" value="Отправить">
+		</form>
 </body>
 </html>
-
