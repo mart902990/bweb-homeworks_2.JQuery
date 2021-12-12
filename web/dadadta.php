@@ -1,5 +1,5 @@
 <?php
-
+echo 'вроде все и работает но то через ....';
 /**
  * Используйте эти классы, если не умеете или не хотите работать с `composer`
  * и использовать библиотеку [dadata-php](https://github.com/hflabs/dadata-php/).
@@ -171,5 +171,5 @@ $result = $dadata->clean("name", $_POST['user_name']." ".$_POST['user_second_nam
 echo '<pre>';
 print_r($result);
 echo '</pre>';
-echo 'вроде все и работает но то через ....';
+
 $dadata->close();
