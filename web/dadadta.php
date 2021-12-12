@@ -10,6 +10,7 @@ echo "$username";
  * Классы не имеют внешних зависимостей, кроме `curl`. Примеры вызова внизу файла.
  */
 
+/*/////
 class TooManyRequests extends Exception
 {
 }
@@ -32,6 +33,7 @@ class Dadata
     /**
      * Initialize connection.
      */
+    /*////
     public function init()
     {
         $this->handle = curl_init();
@@ -55,6 +57,7 @@ class Dadata
      * 
      * (!) This is a PAID service. Not included in free or other plans.
      */
+    /*//////
     public function clean($type, $value)
     {
         $url = $this->clean_url . "/$type";
@@ -69,6 +72,7 @@ class Dadata
      *   - https://dadata.ru/api/find-bank/
      *   - https://dadata.ru/api/find-address/
      */
+    /*/////
     public function findById($type, $fields)
     {
         $url = $this->suggest_url . "/findById/$type";
@@ -79,6 +83,7 @@ class Dadata
      * Reverse geolocation service.
      * See https://dadata.ru/api/geolocate/ for details.
      */
+    /*/////
     public function geolocate($lat, $lon, $count = 10, $radius_meters = 100)
     {
         $url = $this->suggest_url . "/geolocate/address";
@@ -95,6 +100,7 @@ class Dadata
      * Detect city by IP service.
      * See https://dadata.ru/api/iplocate/ for details.
      */
+    /*/////
     public function iplocate($ip)
     {
         $url = $this->suggest_url . "/iplocate/address";
@@ -113,6 +119,7 @@ class Dadata
      *   - https://dadata.ru/api/suggest/name
      *   - ...
      */
+    /*/////
     public function suggest($type, $fields)
     {
         $url = $this->suggest_url . "/suggest/$type";
@@ -122,6 +129,8 @@ class Dadata
     /**
      * Close connection.
      */
+    /*/////
+     
     public function close()
     {
         curl_close($this->handle);
