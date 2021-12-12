@@ -13,7 +13,8 @@ class TooManyRequests extends Exception
 
 class Dadata
 {
-    private $clean_url = "https://cleaner.dadata.ru/api/v1/clean";
+    //private $clean_url = "https://cleaner.dadata.ru/api/v1/clean";
+    private $clean_url = "https://dadata.ru/api/clean/name";
     private $suggest_url = "https://suggestions.dadata.ru/suggestions/api/4_1/rs";
     private $token;
     private $secret;
