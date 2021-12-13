@@ -1,3 +1,3 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ form.html [QSA,L]
+RewriteRule ^ form_ajax.html [QSA,L]
