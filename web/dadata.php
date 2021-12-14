@@ -132,7 +132,7 @@ class Dadata
             curl_setopt($this->handle, CURLOPT_POST, 0);
         }
         $result = $this->exec();
-        $result = json_decode($result, true);
+        $result = json_decode($result, true);s
         return $result;
     }
 
