@@ -18,7 +18,7 @@ echo 'вроде все и работает но ниче не понятно...
             "Accept: application/json",
             "Authorization: Token " . "$token",
             "X-Secret: " . "$secret",
-            '[ "москва сухонская 11" ]',
+           
         ));
 
     $result = curl_exec($ch);
@@ -39,4 +39,5 @@ $dadata->init();
 
 // Стандартизовать ФИО
 $result = $dadata->clean("name", $_POST['user_name']." ".$_POST['user_second_name']." ".$_POST['user_last_name']);
+ '[ "москва сухонская 11" ]',
 */
