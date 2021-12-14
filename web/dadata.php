@@ -1,14 +1,10 @@
 <?php
-
-echo 'вроде все и работает но ниче не понятно....';
-
 /**
  * Используйте эти классы, если не умеете или не хотите работать с `composer`
  * и использовать библиотеку [dadata-php](https://github.com/hflabs/dadata-php/).
  * 
  * Классы не имеют внешних зависимостей, кроме `curl`. Примеры вызова внизу файла.
  */
-
 
 class TooManyRequests extends Exception
 {
@@ -17,7 +13,6 @@ class TooManyRequests extends Exception
 class Dadata
 {
     private $clean_url = "https://cleaner.dadata.ru/api/v1/clean";
-    
     private $suggest_url = "https://suggestions.dadata.ru/suggestions/api/4_1/rs";
     private $token;
     private $secret;
@@ -32,7 +27,6 @@ class Dadata
     /**
      * Initialize connection.
      */
-    
     public function init()
     {
         $this->handle = curl_init();
@@ -56,7 +50,6 @@ class Dadata
      * 
      * (!) This is a PAID service. Not included in free or other plans.
      */
-    
     public function clean($type, $value)
     {
         $url = $this->clean_url . "/$type";
@@ -71,7 +64,6 @@ class Dadata
      *   - https://dadata.ru/api/find-bank/
      *   - https://dadata.ru/api/find-address/
      */
-    /*/////
     public function findById($type, $fields)
     {
         $url = $this->suggest_url . "/findById/$type";
@@ -82,7 +74,6 @@ class Dadata
      * Reverse geolocation service.
      * See https://dadata.ru/api/geolocate/ for details.
      */
-    
     public function geolocate($lat, $lon, $count = 10, $radius_meters = 100)
     {
         $url = $this->suggest_url . "/geolocate/address";
@@ -99,7 +90,6 @@ class Dadata
      * Detect city by IP service.
      * See https://dadata.ru/api/iplocate/ for details.
      */
-    
     public function iplocate($ip)
     {
         $url = $this->suggest_url . "/iplocate/address";
@@ -118,7 +108,6 @@ class Dadata
      *   - https://dadata.ru/api/suggest/name
      *   - ...
      */
-    
     public function suggest($type, $fields)
     {
         $url = $this->suggest_url . "/suggest/$type";
@@ -128,8 +117,6 @@ class Dadata
     /**
      * Close connection.
      */
-    
-     
     public function close()
     {
         curl_close($this->handle);
@@ -168,10 +155,10 @@ class Dadata
 // и в конце следует один раз вызвать метод close().
 //
 // За счёт этого не создаются новые сетевые соединения на каждый запрос,
-// а переиспользуется существующее. новый ючь!!!!!
+// а переиспользуется существующее.
 
-$token = "2681db664da356c397adbf4f45f58434789456ef";
-$secret = "21b4837bb0cd536c36459dc0b6b077aeb64d53b0";
+$token = "0c8b7d7788ff4d71d12e08ba8ea0dc772a065907";
+$secret = "940a6eb08da1765d18a14f478840eac34cbb771d";
 
 $dadata = new Dadata($token, $secret);
 $dadata->init();
@@ -179,8 +166,6 @@ $dadata->init();
 // Стандартизовать ФИО
 $result = $dadata->clean("name", $_POST['user_name']." ".$_POST['user_second_name']." ".$_POST['user_last_name']);
 
-echo '<pre>';
-print_r($result);
-echo '</pre>';
+echo json_encode($result);
 
 $dadata->close();
