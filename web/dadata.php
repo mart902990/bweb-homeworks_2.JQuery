@@ -157,8 +157,9 @@ class Dadata
 // За счёт этого не создаются новые сетевые соединения на каждый запрос,
 // а переиспользуется существующее.
 
-$token = "0c8b7d7788ff4d71d12e08ba8ea0dc772a065907";
-$secret = "940a6eb08da1765d18a14f478840eac34cbb771d";
+
+$token = "2681db664da356c397adbf4f45f58434789456ef";
+$secret = "21b4837bb0cd536c36459dc0b6b077aeb64d53b0";
 
 $dadata = new Dadata($token, $secret);
 $dadata->init();
