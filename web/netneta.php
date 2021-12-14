@@ -16,8 +16,8 @@ echo 'вроде все и работает но ниче не понятно...
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             "Content-Type: application/json",
             "Accept: application/json",
-            "Authorization: Token " . "$token",
-            "X-Secret: " . "$secret",
+            "Authorization: Token " . $token,
+            "X-Secret: " . $secret,
            
         ));
 
